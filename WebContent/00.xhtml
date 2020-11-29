@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<title>ユーザー一覧</title>
+</h:head>
+<body>
+	<h:form>
+		<h:dataTable value="#{bb00.userList}" var="u" border="1">
+			<h:column>
+				<f:facet name="header">ID</f:facet>
+				<h:outputText value="#{u.id}" />
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">名前</f:facet>
+				<h:outputText value="#{u.name}" />
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">編集</f:facet>
+				<h:commandButton action="#{bb00.edit(u)}" value="編集" />
+			</h:column>
+		</h:dataTable>
+	</h:form>
+</body>
+</html>
